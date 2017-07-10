@@ -1,0 +1,8 @@
+
+<h1><%= "Episode #{@episode.number} - #{@episode.date.strftime("%B %d, %Y")}" %></h1>
+<h2>Actors</h2>
+<% @episode.guests.each do |g| %>
+  <ul>
+    <li><%= link_to guest.name, guest_path(guest) %></li>
+  </ul>
+<% end %>

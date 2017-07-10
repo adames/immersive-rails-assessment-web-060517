@@ -1,0 +1,14 @@
+<h1>New Appearance</h1>
+
+<%= form_for @appearance do |f| %>
+  <p><%= f.label :rating %></p>
+  <p><%= f.number_field :rating %></p>
+
+  <h2>Please select one episode</h2>
+  <p><%= f.collection_check_boxes :episode_id, Episode.all, :id, :date %></p><br>
+
+  <h2>Please select one guest</h2>
+  <p><%= f.collection_check_boxes :guest_id, Guest.all, :id, :name %></p><br>
+
+  <p><%= f.submit %></p>
+<% end %>
